@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+fpath=($HOME/completion_zsh $fpath)
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
@@ -110,10 +112,8 @@ source $ZSH/oh-my-zsh.sh
 # restart zsh
 alias "szsh"="source ~/.zshrc"
 
-if [ -x "$(command -v eza)" ]; then
-    alias ls="eza"
-    alias la="eza --long --all --group --icons"
-fi
+alias "ls"="eza"
+alias "la"="eza -lagi"
 
 # power managment
 alias "poweroff"="systemctl poweroff"
@@ -138,12 +138,6 @@ function git_chtok(){
     esac
 }
 
-# Trash
-alias "thp"="trash-put"
-alias "the"="trash-empty"
-alias "thl"="trash-list"
-alias "thre"="trash-restore"
-
 # Zapret for YouTube and other
 alias "zapret"="~/gitclone/zapret-discord-youtube-linux/main_script.sh -nointeractive"
 
@@ -154,3 +148,5 @@ alias "nmc"="nmcli d wifi -a connect"
 # alias "c"="clear"
 
 alias -g G="| grep"
+
+alias arc="arduino-cli"
