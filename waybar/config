@@ -1,0 +1,145 @@
+// -*- mode: jsonc -*-
+{
+    "output": ["DP-1", "HDMI-A-1"],
+    "height": 50, // Waybar height (to be removed for auto height)
+    "spacing": 7, // Gaps between modules
+    "modules-left": [
+        "custom/spotify",
+        "cpu",
+        "temperature#cpu",
+        "memory",
+    ],
+    "modules-center": [
+        "hyprland/language",
+        "hyprland/workspaces",
+        "tray",
+    ],
+    "modules-right": [
+        "temperature#gpu",
+        "pulseaudio",
+        "network",
+        //"bluetooth",
+        //"power-profiles-daemon",
+        //"backlight",
+        //"battery",
+        "clock",
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "4": [],
+            "5": [],
+            "6": [],
+        },
+        "format": "{name} {icon}",
+        "format-icons": {
+            "4": "",
+            "5": "",
+            "6": "",
+            "10": "",
+            "urgent": "",
+            // "active": "",
+            "default": "",
+            "empty": "",
+        }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%H:%M, %d %b %a }",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "interval": 3,
+        "format": "{usage}% ",
+        "tooltip": false,
+    },
+    "memory": {
+        "interval": 3,
+        "format": "{}% ",
+    },
+    "temperature#cpu": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "temperature#gpu": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% ",
+        // "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 20,
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ",
+        //"format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "Кабель ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            //"default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "hyprland/language": {
+        "format": "{} 󰌌",
+        "format-en": "US",
+        "format-ru": "РУ",
+    },
+    "custom/spotify": {
+        "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+        "format": "  {}",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
+    "bluetooth": {
+        "format": "{status}",
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "",
+        "format-connected": "󰂯 {device_alias}",
+        "on-click": "exec blueman-manager",
+    }
+}

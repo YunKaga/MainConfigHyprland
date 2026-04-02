@@ -1,0 +1,24 @@
+[general]
+destination = "$HOME/.config/hypr/monitors.conf"
+
+[power_events]
+
+[power_events.dbus_query_object]
+path = "/org/freedesktop/UPower/devices/line_power_ACAD"
+
+[[power_events.dbus_signal_match_rules]]
+object_path = "/org/freedesktop/UPower/devices/line_power_ACAD"
+
+
+[profiles.Main]
+config_file = "/home/YunKage/.config/hyprdynamicmonitors/hyprconfigs/Main.go.tmpl"
+config_file_type = "template"
+[profiles.Main.conditions]
+
+[[profiles.Main.conditions.required_monitors]]
+description = "Philips Consumer Electronics Company PHL 242V8 0x00000BC9"
+monitor_tag = "monitor0"
+
+[[profiles.Main.conditions.required_monitors]]
+description = "Samsung Electric Company SMB1930NW HLJZ800341"
+monitor_tag = "monitor1"
