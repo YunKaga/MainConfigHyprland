@@ -6,6 +6,7 @@ application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-m
 x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 x-scheme-handler/nxm=modorganizer2-nxm-handler.desktop
 application/x-zerosize=ru.linux_gaming.PortProton.desktop
+x-scheme-handler/=.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-X541I3.desktop;

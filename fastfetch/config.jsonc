@@ -25,6 +25,7 @@
     "gpu",
     "memory",
     "disk",
+    "swap",
     "separator", //
     "uptime",
     "datetime",
