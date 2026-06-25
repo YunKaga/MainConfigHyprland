@@ -1,0 +1,5 @@
+[mgr]
+prepend_keymap = [
+    { on = [ "y", "i" ], run = "shell 'wl-copy < \"$@\"' --confirm", desc = "Copy image to clipboard" },
+    { on = [ "p", "i" ], run = "shell --block 'read -p \"Имя файла: \" filename; wl-paste > $filename.png'", desc = "Paste image from clipboard" }
+]
