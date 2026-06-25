@@ -1,5 +1,5 @@
 * {
-    font-family: JetBrains Nerd Mono;
+    font-family: JetBrains Nerd Font;
     font-size: 17px;
 }
 
@@ -176,7 +176,7 @@ label:focus {
 
 #network {
     background-color: #3d3d3d;
-    color: #BD93F9;
+    color: #2cc74b;
     border-color: #4d4d4d;
 }
 

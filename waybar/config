@@ -15,9 +15,9 @@
         "tray",
     ],
     "modules-right": [
+        "network",
         "temperature#gpu",
         "pulseaudio",
-        "network",
         //"bluetooth",
         //"power-profiles-daemon",
         //"backlight",
@@ -98,7 +98,7 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ",
         //"format-ethernet": "{ipaddr}/{cidr} ",
-        "format-ethernet": "Кабель ",
+        "format-ethernet": "Кабель  ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
