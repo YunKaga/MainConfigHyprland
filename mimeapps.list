@@ -14,3 +14,4 @@ x-scheme-handler/mid=userapp-Thunderbird-X541I3.desktop;
 application/vnd.microsoft.portable-executable=ru.linux_gaming.PortProton.desktop;
 application/x-msdownload=ru.linux_gaming.PortProton.desktop;
 application/x-zerosize=ru.linux_gaming.PortProton.desktop;
+application/x-ms-shortcut=ru.linux_gaming.PortProton.desktop;

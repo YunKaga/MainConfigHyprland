@@ -24,3 +24,10 @@
 /libreoffice
 /cava
 /spotify
+/obs-studio
+/htop
+/libaccounts-glib/
+/zoom/
+
+error.log
+nohup.out
