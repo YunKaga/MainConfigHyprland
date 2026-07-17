@@ -28,6 +28,9 @@
 /htop
 /libaccounts-glib/
 /zoom/
+/QtProject/
+/clangd/
 
 error.log
 nohup.out
+QtProject.conf

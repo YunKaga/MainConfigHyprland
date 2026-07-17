@@ -26,6 +26,9 @@ keymap.set('i', '<C-J>', '<Down>')
 keymap.set('i', '<C-K>', '<Up>')
 keymap.set('i', '<C-L>', '<Right>')
 
+-- delete Ctrl + BackSpace
+keymap.set('i', '<C-BS>', '<C-W>')
+
 -- copyPast
 --keymap.set({'v'}, '<C-y>', '"+y')
 --keymap.set({'n', 'v'}, '<C-p>', '"+p')
